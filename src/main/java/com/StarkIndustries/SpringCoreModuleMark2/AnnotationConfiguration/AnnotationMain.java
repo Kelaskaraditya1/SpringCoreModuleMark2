@@ -1,13 +1,20 @@
 package com.StarkIndustries.SpringCoreModuleMark2.AnnotationConfiguration;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 @Configuration
-@ComponentScan
+@ComponentScan(basePackages = "com.StarkIndustries.SpringCoreModuleMark2.AnnotationConfiguration")
 public class AnnotationMain {
+
+    @Bean
+    public Courses getCourses(){
+        return new Courses("Full Stack Java Developer","1 Year");
+    }
+
     public static void main(String[] args) {
 
 //        ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfiguration.class);
@@ -43,6 +50,6 @@ public class AnnotationMain {
 //        System.out.println(context.getBean("getName"));
 //        System.out.println(context.getBean("getAge"));
 //        System.out.println(context.getBean("Person2"));
-        System.out.println(context.getBean("employee"));
+        System.out.println(context.getBean(Employee.class));
     }
 }

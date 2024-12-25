@@ -1,5 +1,6 @@
 package com.StarkIndustries.SpringCoreModuleMark2.AnnotationConfiguration;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +12,7 @@ public class Employee {
     private String name;
     @Value("Full Stack Java Developer")
     private String department;
+    @Autowired
     private Courses courses;
 
     public Employee(String empId,String name,String department){

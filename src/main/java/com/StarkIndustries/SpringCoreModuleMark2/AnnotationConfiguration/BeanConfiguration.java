@@ -61,13 +61,10 @@ public class BeanConfiguration {
         return new Address("Brazil","Sao Paulo","Ghazni");
     }
 
-    @Bean(name = "course")
-    public Courses getCourses(){
-        return new Courses("Full Stack Java Developer","1 Year");
-    }
 
-    @Bean(name="employee")
-    public Employee getEmployee(Courses course){
-        return new Employee(course);
-    }
+
+//    @Bean(name="employee")
+//    public Employee getEmployee(Courses course){
+//        return new Employee(course);
+//    }
 }
