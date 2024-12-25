@@ -1,7 +1,8 @@
-package com.StarkIndustries.SpringCoreModuleMark2.AnnotaionConfiguration;
+package com.StarkIndustries.SpringCoreModuleMark2.AnnotationConfiguration;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
@@ -9,8 +10,10 @@ import org.springframework.context.annotation.Primary;
 
 record Person(String name,int age,Address address){};
 record Address(String country,String state,String city){};
+
 @Configuration
 public class BeanConfiguration {
+
     @Bean(name = "getName")
     public String getName(){
         return "Mayur";
@@ -55,5 +58,4 @@ public class BeanConfiguration {
     public Address getAddress3(){
         return new Address("Brazil","Sao Paulo","Ghazni");
     }
-
 }
