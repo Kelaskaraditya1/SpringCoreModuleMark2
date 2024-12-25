@@ -5,13 +5,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
 /*This class is similar to configuration.xml for defining the beans*/
 
 record Person(String name,int age,Address address){};
 record Address(String country,String state,String city){};
 
-@Configuration
+//@Configuration
+@Component
 public class BeanConfiguration {
 
     @Bean(name = "getName")
@@ -57,5 +59,15 @@ public class BeanConfiguration {
     @Qualifier("Address3")
     public Address getAddress3(){
         return new Address("Brazil","Sao Paulo","Ghazni");
+    }
+
+    @Bean(name = "course")
+    public Courses getCourses(){
+        return new Courses("Full Stack Java Developer","1 Year");
+    }
+
+    @Bean(name="employee")
+    public Employee getEmployee(Courses course){
+        return new Employee(course);
     }
 }

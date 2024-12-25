@@ -40,8 +40,9 @@ public class AnnotationMain {
 //        System.out.println(student);
 
         // Getting Beans of @Bean
-        System.out.println(context.getBean("getName"));
-        System.out.println(context.getBean("getAge"));
-        System.out.println(context.getBean("Person2"));
+//        System.out.println(context.getBean("getName"));
+//        System.out.println(context.getBean("getAge"));
+//        System.out.println(context.getBean("Person2"));
+        System.out.println(context.getBean("employee"));
     }
 }
