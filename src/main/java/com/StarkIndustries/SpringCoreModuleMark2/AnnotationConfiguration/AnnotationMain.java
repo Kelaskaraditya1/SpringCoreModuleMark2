@@ -34,8 +34,7 @@ public class AnnotationMain {
 //        student.getMajors().stream().forEach(value->{
 //            System.out.println(value+" ");
 //        });
-
-
+        
         // Getting Bean of @Components
 
         var context = new AnnotationConfigApplicationContext(AnnotationMain.class);
